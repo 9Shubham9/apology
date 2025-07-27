@@ -1,0 +1,497 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff5f5;
+    color: #333;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff6b8b;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Welcome Screen Styles */
+#welcome-screen {
+    background: linear-gradient(135deg, #ffcce6, #ffb3d9);
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    background-color: #ff6b8b;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    transform: rotate(-45deg);
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    background-color: #ff6b8b;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: #ff6b8b;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon:nth-child(1) {
+    background-color: #ff9eb5;
+    left: 20%;
+    top: 30%;
+}
+
+.balloon:nth-child(2) {
+    background-color: #ffb3d9;
+    left: 60%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(3) {
+    background-color: #ffd6e7;
+    left: 40%;
+    top: 40%;
+    animation-delay: 2s;
+}
+
+.cute-button {
+    background-color: #ff6b8b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px rgba(255, 107, 139, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cute-button:hover {
+    background-color: #ff4785;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 107, 139, 0.4);
+}
+
+/* Apology Screen Styles */
+#apology-screen {
+    background: linear-gradient(135deg, #ffd6e7, #ffecf2);
+}
+
+.panda-container {
+    margin-bottom: 30px;
+}
+
+.panda {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.panda-face {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 4px solid #333;
+}
+
+.panda-ear {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border-radius: 50%;
+    top: -15px;
+    z-index: -1;
+}
+
+.left-ear {
+    left: -10px;
+}
+
+.right-ear {
+    right: -10px;
+}
+
+.panda-eye {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 40px;
+    overflow: hidden;
+}
+
+.left-eye {
+    left: 20px;
+    transform: rotate(-20deg);
+}
+
+.right-eye {
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+.panda-eye::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 25px;
+    left: 15px;
+}
+
+.panda-nose {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.panda-mouth {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    border-bottom: 4px solid #333;
+    border-radius: 0 0 50% 50%;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tear {
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background-color: #a8d8ea;
+    border-radius: 0 0 5px 5px;
+    top: 50px;
+    left: 20px;
+    animation: tear-drop 2s infinite;
+}
+
+.apology-message {
+    max-width: 500px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #ff6b8b;
+    margin-top: 10px;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-hearts::before, .floating-hearts::after {
+    content: "❤️";
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+    animation: float-heart 4s linear infinite;
+}
+
+.floating-hearts::before {
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.floating-hearts::after {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes tear-drop {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(30px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes float-heart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* Adjust balloon positions to stay clear of text */
+.balloon:nth-child(1) {
+    left: calc(10% - 30px) !important;  /* Move left by 30px */
+    top: 25% !important;
+}
+
+.balloon:nth-child(2) {
+    left: calc(70% + 30px) !important;  /* Move right by 30px */
+    top: 15% !important;
+}
+
+.balloon:nth-child(3) {
+    left: calc(30% - 30px) !important;  /* Move left by 30px */
+    top: 50% !important;
+}
+
+/* Make text container more prominent */
+#welcome-screen > div:not(.hearts):not(.balloons) {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* Reduce balloon size slightly */
+.balloon {
+    width: 50px !important;
+    height: 70px !important;
+    z-index: 1;
+}
+
+/* Mobile Responsiveness Adjustments */
+@media (max-width: 768px) {
+    /* Adjust text sizes */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    p {
+        font-size: 1rem !important;
+    }
+    
+    /* Make panda smaller */
+    .panda {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .panda-face {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* Adjust balloon positions */
+    .balloon {
+        width: 40px !important;
+        height: 60px !important;
+    }
+    
+    .balloon:nth-child(1) {
+        left: 5% !important;
+        top: 15% !important;
+    }
+    
+    .balloon:nth-child(2) {
+        left: 75% !important;
+        top: 10% !important;
+    }
+    
+    .balloon:nth-child(3) {
+        left: 20% !important;
+        top: 40% !important;
+    }
+    
+    /* Adjust button size */
+    .cute-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    /* Adjust message box */
+    .apology-message {
+        width: 90%;
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .panda {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .panda-face {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Reduce heart size */
+    .heart {
+        height: 20px;
+        width: 20px;
+    }
+    
+    .heart:before, 
+    .heart:after {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/* Fix for apology message formatting */
+.apology-message {
+    max-width: 90%; /* Prevents text from touching screen edges */
+    padding: 20px;
+    margin: 20px auto; /* Centers the message box */
+    word-wrap: break-word; /* Prevents long words from overflowing */
+    overflow-y: auto; /* Adds scroll if content is too long */
+    max-height: 60vh; /* Limits height to prevent crowding */
+}
+
+.message-content p {
+    margin-bottom: 15px; /* Adds space between paragraphs */
+    line-height: 1.6; /* Improves readability */
+    text-align: left; /* Better for long messages */
+    padding: 0 10px; /* Prevents text from touching box edges */
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 600px) {
+    .apology-message {
+        padding: 15px;
+        max-height: 65vh; /* More space for mobile */
+    }
+    
+    .message-content p {
+        font-size: 0.95rem; /* Slightly smaller text on mobile */
+        line-height: 1.7; /* More spacing between lines */
+    }
+}
